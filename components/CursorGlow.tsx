@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function CursorGlow() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number>(0);
   const mouse = useRef({ x: 0, y: 0 });
   const current = useRef({ x: 0, y: 0 });
   

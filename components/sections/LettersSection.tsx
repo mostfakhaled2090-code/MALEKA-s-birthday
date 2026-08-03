@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface Particle {
@@ -55,8 +55,10 @@ export function LettersSection() {
     setParticles(generatedParticles);
   }, []);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
+  const containerVariants: Variants = {
+    hidden: {
+      opacity: 0,
+    },
     visible: {
       opacity: 1,
       transition: {
@@ -65,13 +67,18 @@ export function LettersSection() {
       },
     },
   };
-
-  const lineVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 15 },
+  
+  const lineVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : 15,
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 1, ease: "easeOut" },
+      transition: {
+        duration: 1,
+      },
     },
   };
 
@@ -116,7 +123,7 @@ export function LettersSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 1.2 }}
           className="relative p-8 md:p-14 lg:p-16 rounded-3xl bg-white/[0.03] backdrop-blur-xl border border-rose-200/10 shadow-2xl overflow-hidden"
         >
           {/* Subtle Paper/Glass Inner Highlight */}

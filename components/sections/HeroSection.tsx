@@ -1,24 +1,32 @@
 "use client";
 
 import React, { useState, useEffect, useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 
 // ============================================================================
 // ANIMATION VARIANTS
 // ============================================================================
-const revealVariants = {
-  hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    filter: "blur(0px)", 
-    transition: { duration: 1.5, ease: [0.16, 1, 0.3, 1] } 
+const revealVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+    filter: "blur(8px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 1.5,
+    },
   },
 };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
+const staggerContainer: Variants = {
+  hidden: {
+    opacity: 0,
+  },
   visible: {
     opacity: 1,
     transition: {

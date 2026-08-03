@@ -250,8 +250,7 @@ export function NightSkySection() {
         initial={prefersReducedMotion ? false : { opacity: 0, y: 32 }}
         whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.35 }}
-        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      >
+        transition={{ duration: 1.2, ease: "easeOut" }}      >
         <motion.div
           aria-hidden
           className="mx-auto mb-6 h-px w-16"
@@ -261,7 +260,7 @@ export function NightSkySection() {
           initial={prefersReducedMotion ? false : { opacity: 0, scaleX: 0 }}
           whileInView={prefersReducedMotion ? undefined : { opacity: 1, scaleX: 1 }}
           viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
         />
 
         <motion.p
@@ -270,7 +269,7 @@ export function NightSkySection() {
           initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
           whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
         >
           &ldquo;Even the stars pause to admire you.&rdquo;
         </motion.p>

@@ -42,7 +42,11 @@ export default function MusicPlayer() {
       <motion.button
         initial={{ opacity: 0, y: 30, scale: 0.8 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 1, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+        transition={{
+          duration: 1,
+          delay: 1,
+          ease: "easeOut",
+        }}
         whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
         whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
         onClick={togglePlay}

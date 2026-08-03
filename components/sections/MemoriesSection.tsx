@@ -1,6 +1,11 @@
 "use client";
 
-import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  AnimatePresence,
+  Variants,
+} from "framer-motion";
 import { useEffect, useState, useCallback } from "react";
 
 interface Particle {
@@ -100,7 +105,7 @@ export function MemoriesSection() {
     setTouchStart(null);
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -109,14 +114,17 @@ export function MemoriesSection() {
       },
     },
   };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30, scale: 0.95 },
+  
+  const itemVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.95,
+    },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
@@ -165,7 +173,8 @@ export function MemoriesSection() {
           className="text-center mb-16 md:mb-24"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-rose-50 mb-6">
-MEMORIES          </h2>
+            MEMORIES
+          </h2>
           
           <div className="flex items-center justify-center gap-4">
             <div className="h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent w-20 md:w-32" />

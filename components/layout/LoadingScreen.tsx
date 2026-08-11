@@ -69,7 +69,9 @@ export default function LoadingScreen({ children }: LoadingScreenProps) {
   // --------------------------------------------------------------------------
   if (!mounted) return <div className="min-h-screen bg-[#030000]" />; 
 
-  if (timeLeft <= 0) return <>{children}</>;
+  const isDevelopment = process.env.NODE_ENV === "development";
+
+  if (timeLeft <= 0 || isDevelopment) return <>{children}</>;
 
   // --------------------------------------------------------------------------
   // TIME CALCULATIONS

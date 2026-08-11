@@ -96,14 +96,9 @@ export default function LoadingScreen({
 
   const isDevelopment = process.env.NODE_ENV === "development";
 
-  // IMPORTANT:
-  // Website opens normally when:
-  // 1. Countdown reaches zero
-  // 2. Running locally in development
-  // 3. URL contains ?preview=true
-  if (timeLeft <= 0 || isDevelopment || isPreview) {
-    return <>{children}</>;
-  }
+if (timeLeft <= 0 || isDevelopment || isPreview) {
+  return <>{children}</>;
+}
 
   // --------------------------------------------------------------------------
   // TIME CALCULATIONS

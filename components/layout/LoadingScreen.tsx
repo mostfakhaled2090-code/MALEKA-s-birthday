@@ -22,8 +22,7 @@ export default function LoadingScreen({
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
 
-  // Preview mode:
-  // Add ?preview=true to the URL to see the full website before August 19.
+  // Preview mode: add ?preview=true to the URL to bypass the countdown.
   const [isPreview, setIsPreview] = useState(false);
 
   // --------------------------------------------------------------------------
@@ -96,9 +95,9 @@ export default function LoadingScreen({
 
   const isDevelopment = process.env.NODE_ENV === "development";
 
-if (timeLeft <= 0 || isDevelopment || isPreview) {
-  return <>{children}</>;
-}
+  if (timeLeft <= 0 || isDevelopment || isPreview) {
+    return <>{children}</>;
+  }
 
   // --------------------------------------------------------------------------
   // TIME CALCULATIONS

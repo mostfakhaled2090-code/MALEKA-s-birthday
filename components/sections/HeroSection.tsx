@@ -99,8 +99,8 @@ export default function HeroSection() {
           className="text-4xl md:text-6xl lg:text-7xl font-extralight text-white/95 mb-6 tracking-wide drop-shadow-2xl leading-tight"
           style={{ textShadow: '0 10px 40px rgba(0,0,0,0.8)' }}
         >
-          Happy Birthday,<br />
-          <span className="font-light italic tracking-wider">Malak.</span>
+          Happy Birthday<br />
+          <span className="font-light italic tracking-wider">MY LOVE</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -108,9 +108,10 @@ export default function HeroSection() {
           variants={revealVariants} 
           className="text-sm md:text-base lg:text-lg text-white/60 font-light tracking-wide mb-14 max-w-xl mx-auto leading-relaxed"
         >
-          A day I'll never forget.<br />
-          Because today, the most beautiful person in my life celebrates her birthday.
-        </motion.p>
+          Here is to you , today and always<br />
+                 ماليكتيييييي
+                 
+          </motion.p>
 
         {/* Premium Portrait Photo Container */}
         <motion.div 
@@ -145,8 +146,8 @@ export default function HeroSection() {
               }}
             >
               <Image 
-                src="/m18.jpeg" 
-                alt="Malak" 
+                src="/m19.jpeg" 
+                alt="MY LOVE" 
                 fill
                 className="object-cover"
                 priority

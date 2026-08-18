@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { Playfair_Display } from "next/font/google";
+import Image from "next/image";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -140,30 +141,50 @@ export function NightSkySection() {
         ))}
       </div>
 
-      {/* Soft moon glow */}
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute top-[8%] left-1/2 -translate-x-1/2"
-        style={{ y: prefersReducedMotion ? 0 : moonParallax }}
-      >
-        <motion.div
-          className="relative h-28 w-28 rounded-full sm:h-36 sm:w-36"
-          style={{
-            background: `radial-gradient(circle at 35% 35%, ${COLORS.ivory} 0%, ${COLORS.gold} 55%, transparent 78%)`,
-            boxShadow: `
-              0 0 60px rgba(212, 175, 55, 0.45),
-              0 0 140px rgba(212, 175, 55, 0.25),
-              0 0 220px rgba(255, 248, 248, 0.12)
-            `,
-          }}
-          animate={
-            prefersReducedMotion
-              ? undefined
-              : { scale: [1, 1.05, 1], opacity: [0.85, 1, 0.85] }
+      {/* Real Moon */}
+<motion.div
+  aria-hidden
+  className="pointer-events-none absolute top-[8%] left-1/2 -translate-x-1/2"
+  style={{
+    y: prefersReducedMotion ? 0 : moonParallax,
+  }}
+>
+  <motion.div
+className="relative h-36 w-36 sm:h-44 sm:w-44"
+    animate={
+      prefersReducedMotion
+        ? undefined
+        : {
+            scale: [1, 1.025, 1],
+            opacity: [0.92, 1, 0.92],
           }
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </motion.div>
+    }
+    transition={{
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  >
+    {/* Very subtle moon atmosphere */}
+    <div
+      className="absolute inset-[-45%] rounded-full blur-3xl"
+      style={{
+        background:
+          "radial-gradient(circle, rgba(255,248,220,0.12) 0%, rgba(212,175,55,0.06) 35%, transparent 70%)",
+      }}
+    />
+
+    {/* Real moon image */}
+    <Image
+      src="/moon.png"
+      alt=""
+      fill
+      priority
+      className="object-contain"
+      sizes="(max-width: 640px) 144px, 176px"
+          />
+  </motion.div>
+</motion.div>
 
       {/* Animated twinkling stars */}
       <motion.div

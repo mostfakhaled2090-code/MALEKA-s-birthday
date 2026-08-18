@@ -67,7 +67,7 @@ export function EndingSection() {
             className="text-3xl md:text-4xl lg:text-5xl font-serif text-rose-50 mb-12 text-center"
             dir="rtl"
           >
-            وصلنا لآخر صفحة
+           اخر صفحة
           </motion.h2>
 
           <motion.div
@@ -75,11 +75,7 @@ export function EndingSection() {
             className="text-xl md:text-2xl lg:text-3xl text-rose-100/90 leading-relaxed md:leading-[2.2] text-center font-serif space-y-4"
             dir="rtl"
           >
-            <p>كل سنة و إنتِ أقرب إنسانة لقلبي</p>
-            <p>وربنا يديمك في حياتي</p>
-            <p>وأفضل دايمًا أشوفك مبسوطة</p>
 
-            <p className="pt-8">بحبك 🤍</p>
           </motion.div>
 
           <motion.p
@@ -87,7 +83,10 @@ export function EndingSection() {
             className="text-lg md:text-xl text-amber-300 font-serif mt-12 mb-20 text-center tracking-wide"
             dir="rtl"
           >
-            — مصطفى
+        
+        بحب الصورة دي 
+        
+
           </motion.p>
 
           <motion.div
@@ -113,8 +112,8 @@ export function EndingSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none" />
 
                 <Image
-                  src="/images/final-photo.jpg"
-                  alt="Final Memory"
+                  src="/m18.jpeg"
+                  alt="Malak" 
                   fill
                   className="object-cover"
                   priority

@@ -33,7 +33,7 @@ export default function MusicPlayer() {
     <>
       <audio
         ref={audioRef}
-        src="/music/background.mp3"
+        src="/19._Aalo_Annek.mp3"
         loop
         preload="auto"
         className="hidden"
